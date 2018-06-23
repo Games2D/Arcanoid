@@ -31,14 +31,10 @@ void SlabMenager::generateNewLvl()
 			
 			if (slabType != 0) {
 
-				newSlab = new Slab(center + toCenterDistance, fromTopDistance, slabType);
-				slabList.push_back(*newSlab);
+				addSlab(center + toCenterDistance, fromTopDistance, slabType);
 
-				newSlab = new Slab(center - toCenterDistance, fromTopDistance, slabType);
-				slabList.push_back(*newSlab);
+				addSlab(center - toCenterDistance, fromTopDistance, slabType);
 			}
-			
-
 		}
 
 		toCenterDistance = 0;
@@ -62,6 +58,13 @@ void SlabMenager::update()
 	}
 }
 
+void SlabMenager::addSlab(float argX, float argY, int live)
+{
+	Slab *newSlab = new Slab(argX, argY, live);
+
+	slabList.push_back(*newSlab);
+}
+
 sf::Vector2f SlabMenager::checkColision(sf::CircleShape & ball)
 {
 	for (it = slabList.begin(); it != slabList.end(); it++) {
@@ -71,11 +74,11 @@ sf::Vector2f SlabMenager::checkColision(sf::CircleShape & ball)
 			sf::Vector2f slabPosPom = it->slab.getPosition();
 
 			it->removeLive();
-
 			if (it->live < 1)
 				slabList.erase(it);
 
 			return slabPosPom;
 		}
 	}
+	return sf::Vector2f(0.0f, 0.0f);
 }

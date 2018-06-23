@@ -12,6 +12,7 @@ public:
 	void generateNewLvl();
 	void update();
 	std::list<Slab> slabList;
+	void addSlab(float argX, float argY, int live);
 	int rowCount;
 	float topDistance{ 150.0f };
 	float slabSpace{ 5.0f };

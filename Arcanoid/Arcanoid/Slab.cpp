@@ -1,9 +1,9 @@
 #include "Slab.h"
 #include "stdafx.h"
 
-Slab::Slab(float argX, float argY, int live)
+Slab::Slab(float argX, float argY, int li)
 {
-	this->live = live;
+	live = li;
 
 	slab.setOrigin(width / 2, height / 2);
 	slab.setPosition(argX, argY);
@@ -62,7 +62,7 @@ void Slab::update()
 		liveCount.setString("1");
 		slab.setFillColor(color1);
 	}
-	else {
+	else if(live == 0){
 
 		liveCount.setString("");
 		slab.setFillColor(sf::Color::Transparent);
