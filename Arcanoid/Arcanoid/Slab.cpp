@@ -1,5 +1,4 @@
 #include "Slab.h"
-#include "stdafx.h"
 
 Slab::Slab(float argX, float argY, int li)
 {

@@ -1,5 +1,4 @@
 #include "SlabMenager.h"
-#include "stdafx.h"
 
 SlabMenager::SlabMenager(Game * ga)
 {

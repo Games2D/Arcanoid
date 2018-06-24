@@ -1,7 +1,6 @@
 #include "BallManager.h"
 
 
-
 BallManager::BallManager(Game* ga)
 {
 	game = ga;

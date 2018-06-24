@@ -1,11 +1,30 @@
 #pragma once
-#include "stdafx.h"
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "Game.h"
+#include "Player.h"
+#include "BallManager.h"
+#include "SlabMenager.h"
+#include "BonusMenager.h"
 
-class Player;
-class SlabMenager;
-class BonusMenager;
-class BallMenager;
+class Bonus;
 class Ball;
+class BallMenager;
+class MallMultipler;
+class BonusMenager;
+class Game;
+class PaddleShrink;
+class PaddleShuter;
+class PaddleStick;
+class PaddleTenter;
+class Player;
+class Slab;
+class SlabMenager;
+class SpeedAccelerant;
 
 class Game
 {

@@ -1,5 +1,4 @@
 #include "Ball.h"
-#include "stdafx.h"
 
 
 Ball::Ball(Game * ga, float argX, float argY)

@@ -1,7 +1,6 @@
 #include "BallMultipler.h"
 
 
-
 BallMultipler::BallMultipler(Game * ga, float x,float  y) : Bonus()
 {
 	game = ga;

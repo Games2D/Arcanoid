@@ -1,8 +1,12 @@
 #pragma once
-#include "stdafx.h"
-
-class Game;
-class Ball;
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <list>
+#include <iterator>
+#include <string>
+#include "Game.h"
+#include "Ball.h"
 
 class BallManager
 {
@@ -15,6 +19,5 @@ public:
 private:
 	mutable std::list<Ball> ballList;
 	Game* game;
-
 };
 
