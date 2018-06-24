@@ -3,21 +3,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 
-class Bonus;
-class Ball;
-class BallMenager;
-class MallMultipler;
-class BonusMenager;
-class Game;
-class PaddleShrink;
-class PaddleShuter;
-class PaddleStick;
-class PaddleTenter;
-class Player;
-class Slab;
-class SlabMenager;
-class SpeedAccelerant;
-
 class Slab
 {
 public:

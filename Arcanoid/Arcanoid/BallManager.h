@@ -3,10 +3,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <list>
-#include <iterator>
-#include <string>
-#include "Game.h"
-#include "Ball.h"
+
+class Game;
+class Ball;
 
 class BallManager
 {

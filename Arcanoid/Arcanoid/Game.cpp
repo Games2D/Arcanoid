@@ -1,4 +1,8 @@
 #include "Game.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+
 
 Game::Game()
 {

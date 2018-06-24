@@ -1,5 +1,6 @@
 #include "Ball.h"
-
+#include "Game.h"
+#include "Slab.h"
 
 Ball::Ball(Game * ga, float argX, float argY)
 {

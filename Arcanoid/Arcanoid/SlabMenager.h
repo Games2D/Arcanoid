@@ -3,25 +3,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <list>
-#include <iterator>
-#include "Game.h"
-#include "Slab.h"
-#include <list>
 
-class Bonus;
-class Ball;
-class BallMenager;
-class MallMultipler;
-class BonusMenager;
-class Game;
-class PaddleShrink;
-class PaddleShuter;
-class PaddleStick;
-class PaddleTenter;
-class Player;
 class Slab;
-class SlabMenager;
-class SpeedAccelerant;
+class Game;
 
 class SlabMenager
 {

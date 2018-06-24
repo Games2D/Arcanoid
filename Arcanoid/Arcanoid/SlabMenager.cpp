@@ -1,4 +1,7 @@
 #include "SlabMenager.h"
+#include <iterator>
+#include "Game.h"
+#include "Slab.h"
 
 SlabMenager::SlabMenager(Game * ga)
 {

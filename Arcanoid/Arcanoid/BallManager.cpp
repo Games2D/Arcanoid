@@ -1,5 +1,8 @@
 #include "BallManager.h"
-
+#include <iterator>
+#include <string>
+#include "Game.h"
+#include "Ball.h"
 
 BallManager::BallManager(Game* ga)
 {

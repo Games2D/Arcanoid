@@ -1,5 +1,5 @@
 #include "PaddleStick.h"
-
+#include "Game.h"
 
 PaddleStick::PaddleStick(Game * ga, float x, float  y) : Bonus()
 {

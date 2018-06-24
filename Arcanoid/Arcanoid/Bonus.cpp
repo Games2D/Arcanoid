@@ -1,4 +1,5 @@
 #include "Bonus.h"
+#include "Game.h"
 
 Bonus::Bonus()
 {

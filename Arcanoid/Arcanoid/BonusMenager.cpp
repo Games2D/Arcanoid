@@ -1,5 +1,13 @@
 #include "BonusMenager.h"
-
+#include <iterator>
+#include "Game.h"
+#include "Bonus.h"
+#include "BallMultipler.h"
+#include "PaddleShrink.h"
+#include "PaddleShuter.h"
+#include "PaddleStick.h"
+#include "PaddleTenter.h"
+#include "SpeedAccelerant.h"
 
 
 BonusMenager::BonusMenager(Game* ga)

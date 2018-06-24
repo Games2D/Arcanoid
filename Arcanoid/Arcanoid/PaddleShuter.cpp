@@ -1,5 +1,5 @@
 #include "PaddleShuter.h"
-
+#include "Game.h"
 
 
 PaddleShuter::PaddleShuter(Game * ga, float x, float  y) : Bonus()

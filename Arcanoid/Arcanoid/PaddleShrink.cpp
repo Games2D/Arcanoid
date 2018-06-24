@@ -1,5 +1,5 @@
 #include "PaddleShrink.h"
-
+#include "Game.h"
 
 
 PaddleShrink::PaddleShrink(Game * ga, float x, float  y) : Bonus()

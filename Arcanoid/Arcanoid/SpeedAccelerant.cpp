@@ -1,7 +1,5 @@
 #include "SpeedAccelerant.h"
-
-
-
+#include "Game.h"
 
 SpeedAccelerant::SpeedAccelerant(Game * ga, float x, float  y) : Bonus()
 {

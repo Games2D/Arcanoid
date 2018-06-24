@@ -1,5 +1,5 @@
 #include "PaddleTenter.h"
-
+#include "Game.h"
 
 
 PaddleTenter::PaddleTenter(Game * ga, float x, float  y) : Bonus()
