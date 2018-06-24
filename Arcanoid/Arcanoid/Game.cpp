@@ -6,6 +6,7 @@ Game::Game()
 	player = new Player(this, windowMode.width / 2);
 	slabMenager = new SlabMenager(this);
 	bonusMenager = new BonusMenager(this);
+	ballManager = new BallManager(this);
 
 	lvlText.setString("1");
     font.loadFromFile("Roboto-Medium.ttf");
@@ -22,7 +23,7 @@ Game::~Game()
 
 void Game::run()
 {
-	respawnBall();
+	ballManager->respawnBall();
 
 	while (window.isOpen()) {
 
@@ -49,28 +50,18 @@ void Game::run()
 
 		window.clear(sf::Color(40, 40, 40));         //ustawianie t³a
 		
-		for (auto it = ballList.begin(); it != ballList.end(); it++) { //update kulki / kulek
 
-			it->update(DeltaTime);
-			it->Draw(window);
-		}
 	
 		player->update(mousePos, DeltaTime);
 		player->Draw(window);
 
+		ballManager->update(DeltaTime);
 		slabMenager->update(DeltaTime);
 		bonusMenager->update(DeltaTime);
 		window.display();
 
 		DeltaTime = gameClock.getElapsedTime().asSeconds() - framStart;
 	}
-}
-
-void Game::respawnBall()
-{
-	Ball ball(this, windowMode.width / 2, player->getYposition() - 100, sf::Vector2f{ 0, -1 });
-
-	ballList.push_back(ball);
 }
 
 void Game::refreshTextCounter()

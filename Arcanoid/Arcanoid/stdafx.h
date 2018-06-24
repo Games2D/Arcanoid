@@ -26,6 +26,7 @@
 #include <SFML/Audio.hpp>
 #include "Game.h"
 #include "Player.h"
+#include "BallManager.h"
 #include "Ball.h"
 #include "SlabMenager.h"
 #include "Slab.h"

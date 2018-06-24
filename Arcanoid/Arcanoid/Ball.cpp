@@ -30,8 +30,9 @@ void Ball::update(const float &DeltaTime)
 		direction.x *= -1;
 	if (ball.getPosition().x - radius <= 0)                         //odbicia od œciany lewej
 		direction.x *= -1;
-	if (ball.getPosition().y + radius >= game->windowMode.height) //odbicia od œciany dolnej
-		direction.y *= -1;
+	if (ball.getPosition().y + radius >= game->windowMode.height) {//odbicia od œciany dolnej
+
+	}
 	if (ball.getPosition().y - radius <= 0)                         //odbicia od œciany górnej
 		direction.y *= -1;
 

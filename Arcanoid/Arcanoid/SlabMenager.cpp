@@ -48,8 +48,8 @@ void SlabMenager::update(float DeltaTime)
 
 		if (deltaTimer > respawnDelay) {
 			deltaTimer = 0;
-			game->ballList.clear();
-			game->respawnBall();
+			game->ballManager->clearList();
+			game->ballManager->respawnBall();
 			generateNewLvl();
 	
 			game->refreshTextCounter();
@@ -84,10 +84,13 @@ sf::Vector2f SlabMenager::checkColision(sf::CircleShape & ball)
 
 			it->removeLive();
 			if (it->live < 1) {
+
+				if(!(std::rand() % propability))
+					game->bonusMenager->addBonus(it->slab.getPosition().x, it->slab.getPosition().y);
+
 				slabList.erase(it++);
 				game->playerPoints += 50;
 			}
-
 
 			return slabPosPom;
 		}

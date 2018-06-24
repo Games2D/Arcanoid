@@ -6,6 +6,7 @@ class Game;
 class Player
 {
 public:
+	friend class BallMultipler;
 	Player();
 	Player(Game * ga, float argX);
 	~Player() = default;

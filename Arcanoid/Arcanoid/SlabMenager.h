@@ -18,6 +18,7 @@ public:
 	sf::Vector2f checkColision(sf::CircleShape &ball);
 	mutable std::list<Slab>::iterator it;
 private:
+	int propability{ 5 }; //odwrócone prawdopodobieñstwo wydropienia bonusu
 	std::list<Slab> slabList;
 	Game * game;
 	float respawnDelay{ 3.0f }; //inSec

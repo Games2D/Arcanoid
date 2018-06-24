@@ -4,6 +4,7 @@
 class Player;
 class SlabMenager;
 class BonusMenager;
+class BallMenager;
 class Ball;
 
 class Game
@@ -11,6 +12,7 @@ class Game
 public:
 	friend class SlabMenager;
 	friend class BonusMenager;
+	friend class BallManager;
 	friend class Slab;
 	Game();
 	~Game();
@@ -19,8 +21,7 @@ public:
 	Player* player;
 	SlabMenager *slabMenager;
 	BonusMenager *bonusMenager;
-	mutable std::list<Ball> ballList;
-	void respawnBall();
+	BallManager* ballManager;
 	sf::Font font;
 private:
 	int playerPoints{ 0 };
