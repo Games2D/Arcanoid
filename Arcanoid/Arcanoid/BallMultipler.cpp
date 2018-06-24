@@ -2,12 +2,13 @@
 
 
 
-BallMultipler::BallMultipler(Game * ga)
+BallMultipler::BallMultipler(Game * ga, float x,float  y) : Bonus()
 {
-}
-
-BallMultipler::~BallMultipler()
-{
+	game = ga;
+	texture.loadFromFile("BallMultipler.png");
+	obj.setTexture(texture);
+	obj.setOrigin(obj.getLocalBounds().width / 2, obj.getLocalBounds().height / 2);
+	obj.setPosition(x, y);
 }
 
 void BallMultipler::action(float DeltaTime)

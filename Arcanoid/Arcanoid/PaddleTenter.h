@@ -1,15 +1,15 @@
 #pragma once
 #include "stdafx.h"
-#include "Bonus.h"
 
 class Game;
+class Bonus;
 
 class PaddleTenter :
-	public Bonus
+	public virtual Bonus
 {
 public:
-	PaddleTenter(Game* ga);
-	~PaddleTenter();
+	PaddleTenter(Game* ga, float x, float  y);
+	virtual ~PaddleTenter() = default;
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

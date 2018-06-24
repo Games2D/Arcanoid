@@ -2,14 +2,24 @@
 
 
 
-PaddleShuter::PaddleShuter(Game * ga)
+PaddleShuter::PaddleShuter(Game * ga, float x, float  y) : Bonus()
+{
+	game = ga;
+	texture.loadFromFile("PaddleShuter.png");
+	obj.setTexture(texture);
+	obj.setOrigin(obj.getLocalBounds().width / 2, obj.getLocalBounds().height / 2);
+	obj.setPosition(x, y);
+}
+
+void PaddleShuter::action(float DeltaTime)
 {
 }
 
-PaddleShuter::~PaddleShuter()
+void PaddleShuter::startAction()
 {
 }
 
-void PaddleShuter::action()
+void PaddleShuter::stopAction()
 {
 }
+

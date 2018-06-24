@@ -21,23 +21,23 @@ void BonusMenager::update(float DeltaTime)
 	}
 }
 
-void BonusMenager::addBonus()
+void BonusMenager::addBonus(float x, float y)
 {
 	int bonusNum = (std::rand() % 6) + 1;
 	Bonus* wsk = nullptr;
 
 	switch (bonusNum) {
-	case 1: wsk = new BallMultipler(game);
+	case 1: wsk = new BallMultipler(game, x, y);
 		break;
-	case 2: wsk = new PaddleShrink(game);
+	case 2: wsk = new PaddleShrink(game, x, y);
 		break;
-	case 3: wsk = new PaddleShuter(game);
+	case 3: wsk = new PaddleShuter(game, x, y);
 		break;
-	case 4: wsk = new PaddleStick(game);
+	case 4: wsk = new PaddleStick(game, x, y);
 		break;
-	case 5: wsk = new PaddleTenter(game);
+	case 5: wsk = new PaddleTenter(game, x, y);
 		break;
-	case 6: wsk = new SpeedAccelerant(game);
+	case 6: wsk = new SpeedAccelerant(game, x, y);
 		break;
 	}
 

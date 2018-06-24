@@ -7,23 +7,23 @@ class Bonus
 {
 public:
 	friend class BonusMenager;
-	Bonus() = default;
-	~Bonus() = default;
+	Bonus();
+	virtual ~Bonus() = default;
 	sf::Sprite obj;
 	sf::Texture texture;
-	sf::Vector2f gravity{ 0.0f, 20 };
-	sf::Vector2f moveVector{ 0.0f, -50.0f };
+	sf::Vector2f gravity;
+	sf::Vector2f moveVector;
 	void update(float DetlaTime);
 	void Draw(sf::RenderWindow & window);
+	bool destTimer(float DeltaTime);
+	bool getDestroyStatus();
 	virtual void startAction() = 0;
 	virtual void stopAction() = 0;
-	bool getDestroyStatus();
-private:
-	float destructionTimer{ 4 };
-	bool visibilyty = true;
-	bool destructionStatus{ false };
-
-	virtual void action(float DeltaTime) = 0;
+	virtual void action(float DeltaTime) = 0; // obs³uga tego co siê dzieje w trakcie akcji
+protected:
+	float destructionTimer;
+	bool visibilyty;
+	bool destructionStatus;
 	Game* game;
 };
 
