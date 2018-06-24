@@ -82,18 +82,34 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="BallMultipler.cpp" />
+    <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="BonusMenager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PaddleShrink.cpp" />
+    <ClCompile Include="PaddleShuter.cpp" />
+    <ClCompile Include="PaddleStick.cpp" />
+    <ClCompile Include="PaddleTenter.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Slab.cpp" />
     <ClCompile Include="SlabMenager.cpp" />
+    <ClCompile Include="SpeedAccelerant.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="BallMultipler.h" />
+    <ClInclude Include="Bonus.h" />
+    <ClInclude Include="BonusMenager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="PaddleShrink.h" />
+    <ClInclude Include="PaddleShuter.h" />
+    <ClInclude Include="PaddleStick.h" />
+    <ClInclude Include="PaddleTenter.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Slab.h" />
     <ClInclude Include="SlabMenager.h" />
+    <ClInclude Include="SpeedAccelerant.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

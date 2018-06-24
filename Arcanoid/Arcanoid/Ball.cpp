@@ -12,6 +12,18 @@ Ball::Ball(Game * ga, float argX, float argY)
 	ball.setOrigin(radius, radius);
 }
 
+Ball::Ball(Game * ga, float argX, float argY, sf::Vector2f dir)
+{
+	game = ga;
+
+	ball.setRadius(radius);
+	ball.setPosition(argX, argY);
+	ball.setFillColor(color);
+	ball.setOrigin(radius, radius);
+	direction.x = dir.x;
+	direction.y = dir.y;
+}
+
 void Ball::update(const float &DeltaTime)
 {
 	if (ball.getPosition().x + radius >= game->windowMode.width)  //odbicia od œciany prawej

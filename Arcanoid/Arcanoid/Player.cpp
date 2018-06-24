@@ -52,3 +52,8 @@ float Player::getXposition()
 {
 	return paddle.getPosition().x;
 }
+
+float Player::getYposition()
+{
+	return paddle.getPosition().y;
+}

@@ -20,7 +20,6 @@ public:
 private:
 	float width{ 65 };
 	float height{ 20 };
-
 	sf::Text liveCount;
 	sf::Font font;
 };

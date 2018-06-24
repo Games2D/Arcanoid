@@ -17,7 +17,6 @@ void SlabMenager::generateNewLvl()
 	float pointDistanceVertical = slabSpace + exampleSlab.getHeight();
 	Slab* newSlab = nullptr;
 
-	srand(time(NULL));
 	rowCount = (std::rand() % 6) + 2;
 
 	for (int i = 0; i < rowCount; i++) {
@@ -42,19 +41,29 @@ void SlabMenager::generateNewLvl()
 	}
 }
 
-void SlabMenager::update()
+void SlabMenager::update(float DeltaTime)
 {
 
-	if (slabList.empty())
-		int x = 0;
+	if (slabList.empty()) {
+
+		if (deltaTimer > respawnDelay) {
+			deltaTimer = 0;
+			game->ballList.clear();
+			game->respawnBall();
+			generateNewLvl();
+	
+			game->refreshTextCounter();
+		}
+		else {
+			deltaTimer += DeltaTime;
+			game->window.draw(game->lvlText);
+		}
+	}
+
 
 	for (it = slabList.begin(); it != slabList.end(); it++) {
 
-		if (it->live > 0) {
-			it->update();
-			it->Draw(game->window);
-
-		}
+		it->Draw(game->window);
 	}
 }
 
@@ -74,8 +83,11 @@ sf::Vector2f SlabMenager::checkColision(sf::CircleShape & ball)
 			sf::Vector2f slabPosPom = it->slab.getPosition();
 
 			it->removeLive();
-			if (it->live < 1)
-				slabList.erase(it);
+			if (it->live < 1) {
+				slabList.erase(it++);
+				game->playerPoints += 50;
+			}
+
 
 			return slabPosPom;
 		}

@@ -14,6 +14,7 @@ public:
 	void Draw(sf::RenderWindow & window);
 	sf::FloatRect getGlobalBounds();
 	float getXposition();
+	float getYposition();
 	float xPositionOneSecBefore{ 0 };
 	float positionRefresher{ 0 };
 private:

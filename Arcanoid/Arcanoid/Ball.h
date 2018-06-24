@@ -7,6 +7,7 @@ class Ball
 {
 public:
 	Ball(Game * ga, float argX, float argY);
+	Ball(Game * ga, float argX, float argY, sf::Vector2f dir);
 	~Ball() = default;
 
 	sf::Color color{ 255, 255, 255 };

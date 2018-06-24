@@ -14,6 +14,7 @@
 #include <list>
 #include <iterator>
 #include <string>
+#include <sstream>
 
 
 
@@ -28,3 +29,11 @@
 #include "Ball.h"
 #include "SlabMenager.h"
 #include "Slab.h"
+#include "Bonus.h"
+#include "BonusMenager.h"
+#include "BallMultipler.h"
+#include "PaddleShrink.h"
+#include "PaddleShuter.h"
+#include "PaddleStick.h"
+#include "PaddleTenter.h"
+#include "SpeedAccelerant.h"

@@ -1,12 +1,18 @@
 #include "Game.h"
 #include "stdafx.h"
 
-using namespace std;
-
 Game::Game()
 {
 	player = new Player(this, windowMode.width / 2);
 	slabMenager = new SlabMenager(this);
+	bonusMenager = new BonusMenager(this);
+
+	lvlText.setString("1");
+    font.loadFromFile("Roboto-Medium.ttf");
+	lvlText.setFont(font);
+	lvlText.setCharacterSize(70);
+	lvlText.setPosition(windowMode.width / 2, windowMode.height / 3);
+	lvlText.setOrigin(lvlText.getGlobalBounds().width / 2 + 20, 0);
 }
 
 Game::~Game()
@@ -16,10 +22,7 @@ Game::~Game()
 
 void Game::run()
 {
-	Ball ball(this, 100.0f, 100.0f);
-	list<Ball> ballList;
-	ballList.push_back(ball);
-	SlabMenager slabMenager(this);
+	respawnBall();
 
 	while (window.isOpen()) {
 
@@ -55,9 +58,28 @@ void Game::run()
 		player->update(mousePos, DeltaTime);
 		player->Draw(window);
 
-		slabMenager.update();
+		slabMenager->update(DeltaTime);
+		bonusMenager->update(DeltaTime);
 		window.display();
 
 		DeltaTime = gameClock.getElapsedTime().asSeconds() - framStart;
 	}
+}
+
+void Game::respawnBall()
+{
+	Ball ball(this, windowMode.width / 2, player->getYposition() - 100, sf::Vector2f{ 0, -1 });
+
+	ballList.push_back(ball);
+}
+
+void Game::refreshTextCounter()
+{
+	lvlCounter++;;
+
+	std::ostringstream ss;
+	ss << lvlCounter;
+	lvlText.setString(ss.str());
+	ss.str("");
+	ss.clear();
 }

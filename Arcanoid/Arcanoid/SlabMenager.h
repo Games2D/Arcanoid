@@ -10,8 +10,7 @@ public:
 	SlabMenager(Game * ga);
 	~SlabMenager() = default;
 	void generateNewLvl();
-	void update();
-	std::list<Slab> slabList;
+	void update(float DeltaTime);
 	void addSlab(float argX, float argY, int live);
 	int rowCount;
 	float topDistance{ 150.0f };
@@ -19,7 +18,9 @@ public:
 	sf::Vector2f checkColision(sf::CircleShape &ball);
 	mutable std::list<Slab>::iterator it;
 private:
+	std::list<Slab> slabList;
 	Game * game;
-	int i = 0;
+	float respawnDelay{ 3.0f }; //inSec
+	float deltaTimer{ 0.0f };
 };
 
