@@ -27,5 +27,6 @@ protected:
 	bool visibilyty;
 	bool destructionStatus;
 	Game* game;
+	std::string name;
 };
 

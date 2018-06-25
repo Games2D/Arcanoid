@@ -6,11 +6,13 @@
 
 Game::Game()
 {
+	gameInterface = new Interface(this);
 	player = new Player(this, windowMode.width / 2);
 	slabMenager = new SlabMenager(this);
 	bonusMenager = new BonusMenager(this);
 	ballManager = new BallManager(this);
-
+	menu = new Menu(this);
+	
 	lvlText.setString("1");
     font.loadFromFile("Roboto-Medium.ttf");
 	lvlText.setFont(font);
@@ -45,22 +47,24 @@ void Game::run()
 
 				switch (windowEvent.key.code) {
 
-				case sf::Keyboard::Escape: window.close();
+				case sf::Keyboard::Escape: menu->run(&framStart);
 					break;
 				}
 			}
 		}
 
-		window.clear(sf::Color(40, 40, 40));         //ustawianie t³a
+		window.clear(backgroundColor);    //ustawianie t³a
 		
-
-	
 		player->update(mousePos, DeltaTime);
 		player->Draw(window);
 
 		ballManager->update(DeltaTime);
 		slabMenager->update(DeltaTime);
 		bonusMenager->update(DeltaTime);
+
+		gameInterface->update();
+		gameInterface->Draw(window);
+
 		window.display();
 
 		DeltaTime = gameClock.getElapsedTime().asSeconds() - framStart;

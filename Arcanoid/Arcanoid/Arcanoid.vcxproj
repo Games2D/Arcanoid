@@ -88,7 +88,9 @@
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="BonusMenager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="PaddleShrink.cpp" />
     <ClCompile Include="PaddleShuter.cpp" />
     <ClCompile Include="PaddleStick.cpp" />
@@ -105,6 +107,8 @@
     <ClInclude Include="Bonus.h" />
     <ClInclude Include="BonusMenager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="PaddleShrink.h" />
     <ClInclude Include="PaddleShuter.h" />
     <ClInclude Include="PaddleStick.h" />

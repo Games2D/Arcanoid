@@ -8,6 +8,8 @@ class Game;
 class Ball
 {
 public:
+	friend class PaddleStick;
+	friend class BallManager;
 	Ball(Game * ga, float argX, float argY);
 	Ball(Game * ga, float argX, float argY, sf::Vector2f dir);
 	~Ball() = default;
@@ -19,7 +21,12 @@ public:
 	float velocity{ 365 };
 	float velocityBonus{ 0 };
 	sf::Vector2f direction{ 1.0f, -1.0f};
+	void speedAccelerate(float bonusVelocity); // o ile procent przyœpieszyæ pi³k
 private:
+	bool stick{ false }; //czy kulka siê przyklei³a
+	bool sticky{ false }; // czy mo¿e siê przyleiæ 
+	float stickDiference{ 0.0f };
+	float stickBallPositionY{ 0 };
 	void checkColisionWitchSlab();
 	float radius{ 7 };
 	Game * game;

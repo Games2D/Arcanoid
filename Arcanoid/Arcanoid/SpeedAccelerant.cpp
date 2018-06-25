@@ -3,6 +3,7 @@
 
 SpeedAccelerant::SpeedAccelerant(Game * ga, float x, float  y) : Bonus()
 {
+	name = "SpeedAccelerant";
 	game = ga;
 	texture.loadFromFile("SpeedAccelerant.png");
 	obj.setTexture(texture);
@@ -16,8 +17,10 @@ void SpeedAccelerant::action(float DeltaTime)
 
 void SpeedAccelerant::startAction()
 {
+	game->ballManager->speedAccelerate(velocityBonus);
 }
 
 void SpeedAccelerant::stopAction()
 {
+	game->ballManager->speedAccelerate(-velocityBonus);
 }

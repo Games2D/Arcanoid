@@ -3,8 +3,8 @@
 
 Bonus::Bonus()
 {
-	gravity = sf::Vector2f{ 0.0f, 20 };
-	moveVector = sf::Vector2f{ 0.0f, -50.0f };
+	gravity = sf::Vector2f{ 0.0f, 3 };
+	moveVector = sf::Vector2f{ 0.0f, -300.0f };
 	destructionTimer = float{ 4.0f };
 	visibilyty = bool{ true };
 	destructionStatus = bool{ false };
@@ -14,8 +14,11 @@ void Bonus::update(float DeltaTime)
 {
 	if (visibilyty) {
 
-		moveVector += gravity;
-		obj.move(moveVector);
+		if(moveVector.y < 1100 )
+			moveVector += gravity;
+		obj.move(moveVector * DeltaTime);
+		if(obj.getPosition().y > game->windowMode.height) // je¿eli bonus przepad³
+			destructionStatus = true;
 	}
 	else {
 

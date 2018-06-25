@@ -62,7 +62,11 @@ void SlabMenager::update(float DeltaTime)
 		}
 	}
 
+	Draw();
+}
 
+void SlabMenager::Draw()
+{
 	for (it = slabList.begin(); it != slabList.end(); it++) {
 
 		it->Draw(game->window);
@@ -85,13 +89,14 @@ sf::Vector2f SlabMenager::checkColision(sf::CircleShape & ball)
 			sf::Vector2f slabPosPom = it->slab.getPosition();
 
 			it->removeLive();
+			game->playerPoints += 3;
 			if (it->live < 1) {
 
 				if(!(std::rand() % propability))
 					game->bonusMenager->addBonus(it->slab.getPosition().x, it->slab.getPosition().y);
 
 				slabList.erase(it++);
-				game->playerPoints += 50;
+				game->playerPoints += 57;
 			}
 
 			return slabPosPom;

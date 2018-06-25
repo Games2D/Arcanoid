@@ -14,7 +14,7 @@ Player::Player(Game * ga, float argX)
 void Player::setPlayer(Game * ga, float argX)
 {
 	game = ga;
-	paddleTopDistance = game->windowMode.height - paddleBotomDistance;
+	paddleTopDistance = game->windowMode.height - paddleBotomDistance - game->gameInterface->getHeight();
 
 	paddle.setPosition(argX, paddleTopDistance);
 	paddle.setOrigin(width / 2, height / 2);
@@ -23,18 +23,19 @@ void Player::setPlayer(Game * ga, float argX)
 
 void Player::update(sf::Vector2i mousePos,float DeltaTime)
 {
-	if(mousePos.x - width / 2 > 0 
-		&& mousePos.x + width / 2 < game->windowMode.width)
+	if(mousePos.x - paddle.getSize().x / 2 > 0 
+		&& mousePos.x + paddle.getSize().x / 2 < game->windowMode.width)
 	paddle.setPosition(mousePos.x, paddleTopDistance);
 
 	if (positionRefresher > 0.05) {
 		positionRefresher = 0.0f;
 		xPositionOneSecBefore = mousePos.x;
-		
 	}
 	else {
 		positionRefresher += DeltaTime;
 	}
+
+	game->bonusMenager->checkColision(paddle);
 }
 
 void Player::Draw(sf::RenderWindow & window)

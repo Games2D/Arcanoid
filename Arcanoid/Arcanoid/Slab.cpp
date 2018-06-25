@@ -7,14 +7,14 @@ Slab::Slab(float argX, float argY, int li)
 	slab.setOrigin(width / 2, height / 2);
 	slab.setPosition(argX, argY);
 	slab.setSize(sf::Vector2f(width, height));
-	slab.setOutlineColor(sf::Color(28, 26, 26));
+	slab.setOutlineColor(sf::Color(76, 76, 76)); //obwódka p³ytki
 	slab.setOutlineThickness(2);
 
 	font.loadFromFile("Roboto-Medium.ttf");
 	liveCount.setFont(font);
-	liveCount.setFillColor(sf::Color(28, 26, 26));
-	liveCount.setCharacterSize(15);
-	liveCount.setOrigin(liveCount.getLocalBounds().width / 2, height/2 );
+	liveCount.setFillColor(sf::Color(40, 52, 94, 190));
+	liveCount.setCharacterSize(14);
+	liveCount.setOrigin((liveCount.getLocalBounds().width / 2 ) + 3, height/2 );
 	liveCount.setPosition(argX, argY);
 
 	update();

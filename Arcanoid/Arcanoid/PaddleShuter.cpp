@@ -4,6 +4,7 @@
 
 PaddleShuter::PaddleShuter(Game * ga, float x, float  y) : Bonus()
 {
+	name = "PaddleShuter";
 	game = ga;
 	texture.loadFromFile("PaddleShuter.png");
 	obj.setTexture(texture);

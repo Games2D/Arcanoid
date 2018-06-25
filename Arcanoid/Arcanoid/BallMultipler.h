@@ -15,5 +15,7 @@ public:
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();
+private: 
+	float alfa{ 10.0f }; //k¹t odchylenia
 };
 

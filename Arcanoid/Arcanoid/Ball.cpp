@@ -27,15 +27,18 @@ Ball::Ball(Game * ga, float argX, float argY, sf::Vector2f dir)
 void Ball::update(const float &DeltaTime)
 {
 	if (ball.getPosition().x + radius >= game->windowMode.width)  //odbicia od œciany prawej
-		direction.x *= -1;
+		direction.x = -1;
 	if (ball.getPosition().x - radius <= 0)                         //odbicia od œciany lewej
-		direction.x *= -1;
+		direction.x = 1;
 	if (ball.getPosition().y + radius >= game->windowMode.height) {//odbicia od œciany dolnej
 
 	}
 	if (ball.getPosition().y - radius <= 0)                         //odbicia od œciany górnej
-		direction.y *= -1;
+		direction.y = 1;
 
+	checkColisionWitchSlab();
+
+	if (!stick)
 	if (ball.getGlobalBounds().intersects(game->player->getGlobalBounds())) {
 
 		velocityBonus = (game->player->getXposition() - game->player->xPositionOneSecBefore);
@@ -57,16 +60,31 @@ void Ball::update(const float &DeltaTime)
 		if (vectorLength != 0) {
 			direction.x = direction.x / vectorLength;
 		}
+		if (sticky) {
+
+			stick = true;
+			stickDiference = game->player->paddle.getPosition().x - ball.getPosition().x;
+			stickBallPositionY = ball.getPosition().y - 3.0f;
+		}
+			
 	}
 
-	checkColisionWitchSlab();
+	float actualyVelocity = velocity + velocityBonus;
 
-	ball.move(direction * (velocity + velocityBonus) * DeltaTime);
+	if (stick) 
+		ball.setPosition(sf::Vector2f{ game->player->paddle.getPosition().x - stickDiference, stickBallPositionY });
+     else
+		ball.move(direction * actualyVelocity * DeltaTime);
 }
 
 void Ball::Draw(sf::RenderWindow & window)
 {
 	window.draw(ball);
+}
+
+void Ball::speedAccelerate(float bonusVelocity)
+{
+	velocityBonus += bonusVelocity;
 }
 
 void Ball::checkColisionWitchSlab()

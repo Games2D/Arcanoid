@@ -13,8 +13,10 @@ public:
 	BonusMenager(Game * ga);
 	~BonusMenager() = default;
 	void update(float DeltaTime);
+	void Draw();
 	void addBonus(float x, float y);
 	void checkColision(sf::RectangleShape paddle);
+	int* activeBonus();
 private:
 	Game * game;
 	mutable std::list<Bonus*> bonusList;

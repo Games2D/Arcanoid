@@ -9,6 +9,10 @@ class Player
 {
 public:
 	friend class BallMultipler;
+	friend class PaddleShrink;
+	friend class PaddleTenter;
+	friend class PaddleStick;
+	friend class Ball;
 	Player();
 	Player(Game * ga, float argX);
 	~Player() = default;

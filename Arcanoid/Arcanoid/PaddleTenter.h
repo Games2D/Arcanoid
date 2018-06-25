@@ -15,5 +15,12 @@ public:
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();
+private:
+	void refreshPaddleSize();
+	sf::Vector2f paddleSizeActualy;
+	sf::Vector2f paddleOriginActualy;
+	float tenterLvl{ 0.3f };
+	float tenterSizeValue{ 0.0f };
+	float tenterOriginValue{ 0.0f };
 };
 

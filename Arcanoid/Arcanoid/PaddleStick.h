@@ -15,5 +15,8 @@ public:
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();
+	sf::Color playerColorBefore;
+private:
+	bool active;
 };
 
