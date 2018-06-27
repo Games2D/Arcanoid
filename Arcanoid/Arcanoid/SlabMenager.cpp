@@ -11,6 +11,9 @@ SlabMenager::SlabMenager(Game * ga)
 
 void SlabMenager::generateNewLvl()
 {
+	if (!slabList.empty())
+		slabList.clear();
+
 	float center = game->windowMode.width / 2;
 	float toCenterDistance = 0;
 	float fromTopDistance = topDistance;

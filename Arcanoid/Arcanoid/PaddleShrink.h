@@ -11,7 +11,7 @@ class PaddleShrink :
 {
 public:
 	PaddleShrink(Game* ga, float x, float  y);
-	virtual ~PaddleShrink() = default;
+	virtual ~PaddleShrink();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

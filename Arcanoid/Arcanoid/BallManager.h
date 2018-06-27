@@ -11,6 +11,7 @@ class BallManager
 {
 public:
 	friend class BallMultipler;
+	friend class Game;
 	BallManager(Game* ga);
 	~BallManager() = default;
 	void update(float DeltaTime); //update and draw
@@ -26,5 +27,6 @@ private:
 	mutable std::list<Ball> ballList;
 	Game* game;
 	bool isStic{ false };
+	bool isBallBellowPaddle(Ball w) const;
 };
 

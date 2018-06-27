@@ -91,6 +91,8 @@
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuOption.cpp" />
+    <ClCompile Include="MusicRecord.cpp" />
     <ClCompile Include="PaddleShrink.cpp" />
     <ClCompile Include="PaddleShuter.cpp" />
     <ClCompile Include="PaddleStick.cpp" />
@@ -98,6 +100,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Slab.cpp" />
     <ClCompile Include="SlabMenager.cpp" />
+    <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="SpeedAccelerant.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +112,8 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuOption.h" />
+    <ClInclude Include="MusicRecord.h" />
     <ClInclude Include="PaddleShrink.h" />
     <ClInclude Include="PaddleShuter.h" />
     <ClInclude Include="PaddleStick.h" />
@@ -116,6 +121,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Slab.h" />
     <ClInclude Include="SlabMenager.h" />
+    <ClInclude Include="SoundPlayer.h" />
     <ClInclude Include="SpeedAccelerant.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

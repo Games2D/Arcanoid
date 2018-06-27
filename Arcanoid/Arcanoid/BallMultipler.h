@@ -11,7 +11,7 @@ class BallMultipler :
 {
 public:
 	BallMultipler(Game* ga, float x, float  y);
-	virtual ~BallMultipler() = default;
+	virtual ~BallMultipler();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

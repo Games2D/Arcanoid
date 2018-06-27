@@ -11,10 +11,15 @@ BallManager::BallManager(Game* ga)
 
 void BallManager::update(float DeltaTime) 
 {
-	for (auto it = ballList.begin(); it != ballList.end(); it++) { //update kulki / kulek
+	for (auto it = ballList.begin(); it != ballList.end(); ) { //update kulki / kulek
 
 		it->update(DeltaTime);
 		it->Draw(game->window);
+
+		if (isBallBellowPaddle(*it))
+			it = ballList.erase(it);
+		else
+			it++;
 	}
 }
 
@@ -75,4 +80,13 @@ void BallManager::speedAccelerate(float velocityBonus)
 
 		it->speedAccelerate(velocityBonus);
 	}
+}
+
+bool BallManager::isBallBellowPaddle(Ball w) const
+{
+
+	if(w.ball.getPosition().y > game->player->getYposition() + game->player->paddleBotomDistance)
+		return true;
+	else 
+		return false;
 }

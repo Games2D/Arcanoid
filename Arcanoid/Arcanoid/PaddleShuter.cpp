@@ -12,6 +12,11 @@ PaddleShuter::PaddleShuter(Game * ga, float x, float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+PaddleShuter::~PaddleShuter()
+{
+	stopAction();
+}
+
 void PaddleShuter::action(float DeltaTime)
 {
 }

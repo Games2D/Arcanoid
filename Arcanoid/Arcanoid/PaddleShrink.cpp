@@ -12,6 +12,11 @@ PaddleShrink::PaddleShrink(Game * ga, float x, float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+PaddleShrink::~PaddleShrink()
+{
+	stopAction();
+}
+
 void PaddleShrink::action(float DeltaTime)
 {
 }

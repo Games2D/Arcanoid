@@ -67,8 +67,28 @@ void Game::run()
 
 		window.display();
 
+		if (checkResume())
+			resume(&framStart);
+
 		DeltaTime = gameClock.getElapsedTime().asSeconds() - framStart;
 	}
+}
+
+bool Game::checkResume()
+{
+	if (ballManager->ballList.empty())
+		return true;
+	else
+		return false;
+}
+
+void Game::resume(float* framStart)
+{
+	ballManager->respawnBall();
+	bonusMenager->deleteAllBonus();
+	slabMenager->generateNewLvl();
+	menu->run(framStart);
+	playerPoints = 0;
 }
 
 void Game::refreshTextCounter()

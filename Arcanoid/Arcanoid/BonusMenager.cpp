@@ -121,3 +121,13 @@ int* BonusMenager::activeBonus()
 	return returnedTab;
 }
 
+void BonusMenager::deleteAllBonus()
+{
+	for (auto it = bonusList.begin(); it != bonusList.end(); it++) {
+
+		delete * it;
+	}
+
+	bonusList.clear();
+}
+

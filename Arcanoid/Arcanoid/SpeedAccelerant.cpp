@@ -11,6 +11,11 @@ SpeedAccelerant::SpeedAccelerant(Game * ga, float x, float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+SpeedAccelerant::~SpeedAccelerant()
+{
+	stopAction();
+}
+
 void SpeedAccelerant::action(float DeltaTime)
 {
 }

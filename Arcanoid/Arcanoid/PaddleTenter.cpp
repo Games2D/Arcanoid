@@ -12,6 +12,11 @@ PaddleTenter::PaddleTenter(Game * ga, float x, float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+PaddleTenter::~PaddleTenter()
+{
+	stopAction();
+}
+
 void PaddleTenter::action(float DeltaTime)
 {
 }

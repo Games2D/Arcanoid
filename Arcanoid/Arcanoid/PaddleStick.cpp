@@ -11,6 +11,11 @@ PaddleStick::PaddleStick(Game * ga, float x, float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+PaddleStick::~PaddleStick()
+{
+	stopAction();
+}
+
 void PaddleStick::action(float DeltaTime)
 {
 }

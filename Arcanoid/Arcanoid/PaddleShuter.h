@@ -11,7 +11,7 @@ class PaddleShuter :
 {
 public:
 	PaddleShuter(Game* ga, float x, float  y);
-	virtual ~PaddleShuter() = default;
+	virtual ~PaddleShuter();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

@@ -24,12 +24,12 @@ public:
 	float getYposition();
 	float xPositionOneSecBefore{ 0 };
 	float positionRefresher{ 0 };
+	float paddleBotomDistance{ 60 };
+	float paddleTopDistance;
 private:
 	Game * game;
 	float width{ 80 };
 	float height{ 5 };
-	float paddleBotomDistance{ 60 };
-	float paddleTopDistance;
 	sf::Color color{ 0,0,0 };
 	sf::RectangleShape paddle{ sf::Vector2f{ width, height } };
 };

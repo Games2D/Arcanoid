@@ -11,7 +11,7 @@ class PaddleStick :
 {
 public:
 	PaddleStick(Game* ga, float x, float  y);
-	virtual ~PaddleStick() = default;
+	virtual ~PaddleStick();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

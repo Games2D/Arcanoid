@@ -11,7 +11,7 @@ class PaddleTenter :
 {
 public:
 	PaddleTenter(Game* ga, float x, float  y);
-	virtual ~PaddleTenter() = default;
+	virtual ~PaddleTenter();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();

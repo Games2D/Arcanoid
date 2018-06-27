@@ -1,5 +1,5 @@
 #include "Menu.h"
-
+#include "MenuOption.h"
 
 
 Menu::Menu(Game* ga)
@@ -22,6 +22,8 @@ void Menu::run(float* framStart)
 		textRect.top + textRect.height / 2.0f);
 
 	sf::Event windowEvent;
+	MenuOption resumeOption(game, game->windowMode.width / 2, game->windowMode.height / 2 - 20, "Resume");
+	MenuOption exitOption(game, game->windowMode.width / 2, game->windowMode.height / 2 + 36, "Exit");
 	bool menuIsOpen = true;
 	while (menuIsOpen) {
 
@@ -44,6 +46,18 @@ void Menu::run(float* framStart)
 			}
 		}
 
+		//wykrywanie zda¿eñ przycisków
+		if (resumeOption.pressed()) {
+
+			menuIsOpen = false;
+			*framStart = game->gameClock.getElapsedTime().asSeconds();
+		}
+		else if (exitOption.pressed()) {
+
+			game->window.close();
+			menuIsOpen = false;
+		}
+
 		//rysowanie t³a t³a
 		game->window.clear(game->backgroundColor);
 		game->player->Draw(game->window);
@@ -55,6 +69,9 @@ void Menu::run(float* framStart)
 	    //rysowanie menu
 		game->window.draw(background); 
 		game->window.draw(pause);
+		resumeOption.update();
+		exitOption.update();
+
 		game->window.display();
 	}
 }

@@ -17,6 +17,7 @@ public:
 	void addBonus(float x, float y);
 	void checkColision(sf::RectangleShape paddle);
 	int* activeBonus();
+	void deleteAllBonus();
 private:
 	Game * game;
 	mutable std::list<Bonus*> bonusList;

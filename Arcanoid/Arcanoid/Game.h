@@ -35,11 +35,13 @@ public:
 	sf::Font font;
 	sf::Text lvlText;
 	int playerPoints{ 0 };
+	sf::RenderWindow window{ windowMode, "Arcanoid", sf::Style::Default };
 private:
+	bool checkResume();
+	void resume(float* framStart);
 	sf::Color backgroundColor{ 40, 40, 40 };
 	int lvlCounter{ 1 };
 	void refreshTextCounter();
-	sf::RenderWindow window{ windowMode, "Arcanoid", sf::Style::Default };
 	sf::Clock gameClock;
 	float DeltaTime{ 1 / 60.0f };
 };

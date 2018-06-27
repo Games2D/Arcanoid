@@ -14,6 +14,11 @@ BallMultipler::BallMultipler(Game * ga, float x,float  y) : Bonus()
 	obj.setPosition(x, y);
 }
 
+BallMultipler::~BallMultipler()
+{
+	stopAction();
+}
+
 void BallMultipler::action(float DeltaTime)
 {
 }

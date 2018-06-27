@@ -11,7 +11,7 @@ class SpeedAccelerant :
 {
 public:
 	SpeedAccelerant(Game* ga, float x, float  y);
-	virtual ~SpeedAccelerant() = default;
+	virtual ~SpeedAccelerant();
 	void action(float DeltaTime);
 	void startAction();
 	void stopAction();
